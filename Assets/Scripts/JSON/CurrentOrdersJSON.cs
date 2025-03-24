@@ -7,4 +7,6 @@ public class CurrentOrderJSON
     public string PlannedStart;     // ""
     public string PlannedEnd;       // ""
     public string State;            // ""
+    public string PartNumber;  
+    public string CarrierID;    
 }

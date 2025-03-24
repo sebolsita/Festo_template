@@ -54,9 +54,20 @@ public class CurrentOrders : MonoBehaviour
     }
 
     // Coroutine to make a GET request to the server
-    public void GetCurrentOrders()
+    /*    public void GetCurrentOrders()
+        {
+            StartCoroutine(GetRequest("http://172.21.0.90/SQLData.php?Command=currentOrders"));     //calls coroutine and sets string
+        }*/
+
+    public string GetCurrentOrders()
     {
-        StartCoroutine(GetRequest("http://172.21.0.90/SQLData.php?Command=currentOrders"));     //calls coroutine and sets string
+        string url = "http://172.21.0.90/SQLDataStudents.php?Command=currentOrders";
+
+        using (var webClient = new System.Net.WebClient())
+        {
+            string jsonString = webClient.DownloadString(url);
+            return jsonString;
+        }
     }
 
     // Coroutine to handle the GET request and update UI based on response

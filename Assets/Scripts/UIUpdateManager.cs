@@ -36,7 +36,7 @@ public class UIUpdateManager : MonoBehaviour
     {
         if (node == "RFIDIn")
         {
-            Debug.LogWarning(interfaceToRead + 1 + " is reading: " + RFIDInNodeReaders[interfaceToRead].dataFromOPCUANode);
+            //Debug.LogWarning(interfaceToRead + 1 + " is reading: " + RFIDInNodeReaders[interfaceToRead].dataFromOPCUANode);
         }
 
         if (node == "Icon")
