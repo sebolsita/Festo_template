@@ -2,24 +2,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic;
 
 public class PanelDataUpdater : MonoBehaviour
 {
-    [System.Serializable]
-    public class PanelMachineMapping
-    {
-        public string panelName;
-        public int machineID;
-    }
-
     [Header("Text Fields")]
     [SerializeField] private TMP_Text titleText;
     [SerializeField] private TMP_Text detailsText;
     [SerializeField] private TMP_Text modeLabel;
-
-    [Header("Manual Mapping")]
-    [SerializeField] private List<PanelMachineMapping> panelMappings = new List<PanelMachineMapping>();
 
     [Header("Optional Refresh Slider")]
     [SerializeField] private Slider refreshSlider;
@@ -34,7 +23,7 @@ public class PanelDataUpdater : MonoBehaviour
 
         if (refreshSlider != null)
         {
-            refreshSlider.value = 6; // TIMED: 5s
+            refreshSlider.value = 6; // default to TIMED: 5s
         }
 
         StartCoroutine(RefreshRoutine());
@@ -42,20 +31,17 @@ public class PanelDataUpdater : MonoBehaviour
 
     private void AssignMachineIDFromName()
     {
-        string myName = gameObject.name;
-
-        foreach (var map in panelMappings)
+        string name = gameObject.name;
+        if (name.StartsWith("Panel_") && int.TryParse(name.Replace("Panel_", ""), out int id))
         {
-            if (map.panelName == myName)
-            {
-                machineID = map.machineID;
-                return;
-            }
+            machineID = id;
         }
-
-        machineID = -1;
-        titleText.text = "Unknown Machine";
-        detailsText.text = "No mapping found for this panel.";
+        else
+        {
+            machineID = -1;
+            titleText.text = "Unknown Machine";
+            detailsText.text = "Invalid panel name format.";
+        }
     }
 
     private IEnumerator RefreshRoutine()
@@ -67,16 +53,16 @@ public class PanelDataUpdater : MonoBehaviour
 
             switch ((int)refreshMode)
             {
-                case 0: // NO UPDATES
+                case 0:
                     modeLabel.text = "NO UPDATES";
                     break;
 
-                case 1: // AUTO REFRESH
+                case 1:
                     modeLabel.text = "AUTO REFRESH";
                     UpdateIfChanged();
                     break;
 
-                default: // TIMED
+                default:
                     modeLabel.text = "TIMED: " + (int)delay + "s";
                     timer += Time.deltaTime;
                     if (timer >= delay)
