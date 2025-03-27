@@ -18211,7 +18211,7 @@ GameObject:
   - component: {fileID: 1029982959}
   - component: {fileID: 1029982960}
   m_Layer: 0
-  m_Name: Anchor_test
+  m_Name: Spawn_ui_panels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

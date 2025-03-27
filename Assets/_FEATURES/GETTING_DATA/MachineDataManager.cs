@@ -59,3 +59,4 @@ public class MachineDataManager : MonoBehaviour
         return null;
     }
 }
+
