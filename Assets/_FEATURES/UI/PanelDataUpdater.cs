@@ -5,77 +5,78 @@ using System.Collections;
 
 public class PanelDataUpdater : MonoBehaviour
 {
-    [Header("Text Fields")]
-    [SerializeField] private TMP_Text titleText;
-    [SerializeField] private TMP_Text detailsText;
-    [SerializeField] private TMP_Text modeLabel;
+    [Header("TMP References")]
+    [SerializeField] private TMP_Text titleTMP;
+    [SerializeField] private TMP_Text updateModeTMP;
+    [SerializeField] private TMP_Text machineInfoTMP;
+    [SerializeField] private TMP_Text orderInfoTMP;
+    [SerializeField] private TMP_Text orderStatusTMP;
+    [SerializeField] private TMP_Text partNumberValueTMP;
+    [SerializeField] private TMP_Text quantityValueTMP;
 
-    [Header("Optional Refresh Slider")]
+    [Header("UI Controls")]
     [SerializeField] private Slider refreshSlider;
+    [SerializeField] private Slider partNumberSlider;
+    [SerializeField] private Slider quantitySlider;
 
     private int machineID = -1;
     private string lastNodeData = "";
-    private float timer = 0f;
+    private float refreshTimer = 0f;
+    private string lastTimestamp = "";
 
     private void Start()
     {
         AssignMachineIDFromName();
 
-        if (refreshSlider != null)
-        {
-            refreshSlider.value = 6; // default to TIMED: 5s
-        }
+        partNumberSlider.onValueChanged.AddListener(OnPartSliderChanged);
+        quantitySlider.onValueChanged.AddListener(OnQtySliderChanged);
 
-        StartCoroutine(RefreshRoutine());
+        OnPartSliderChanged(partNumberSlider.value);
+        OnQtySliderChanged(quantitySlider.value);
+
+        StartCoroutine(RefreshLoop());
     }
 
     private void AssignMachineIDFromName()
     {
-        string name = gameObject.name;
-        if (name.StartsWith("Panel_") && int.TryParse(name.Replace("Panel_", ""), out int id))
+        if (gameObject.name.StartsWith("Panel_") && int.TryParse(gameObject.name.Replace("Panel_", ""), out int id))
         {
             machineID = id;
+            string machineName = MachineDataManager.Instance.GetMachineName(machineID);
+            titleTMP.text = $"{machineName} | ID: {machineID}";
         }
         else
         {
-            machineID = -1;
-            titleText.text = "Unknown Machine";
-            detailsText.text = "Invalid panel name format.";
+            titleTMP.text = "UNKNOWN MACHINE";
         }
     }
 
-    private IEnumerator RefreshRoutine()
+    private IEnumerator RefreshLoop()
     {
         while (true)
         {
-            float refreshMode = refreshSlider != null ? refreshSlider.value : 6f;
-            float delay = Mathf.Max(refreshMode - 1f, 0f);
+            int refreshMode = (int)refreshSlider.value;
+            float delay = Mathf.Max(refreshMode - 1, 0);
 
-            switch ((int)refreshMode)
+            if (refreshMode == 0)
             {
-                case 0:
-                    modeLabel.text = "NO UPDATES";
-                    break;
+                updateModeTMP.text = "DATA UPDATE: OFF";
+            }
+            else if (refreshMode == 1)
+            {
+                updateModeTMP.text = "DATA UPDATE: AUTO";
+                UpdateIfChanged();
+            }
+            else
+            {
+                if (refreshTimer <= 0)
+                {
+                    UpdatePanel();
+                    refreshTimer = delay;
+                }
 
-                case 1:
-                    modeLabel.text = "AUTO REFRESH";
-                    UpdateIfChanged();
-                    break;
-
-                default:
-                    modeLabel.text = "TIMED: " + (int)delay + "s";
-                    timer += Time.deltaTime;
-                    if (timer >= delay)
-                    {
-                        UpdateText();
-                        timer = 0f;
-                    }
-                    else
-                    {
-                        int secondsLeft = Mathf.CeilToInt(delay - timer);
-                        modeLabel.text = "TIMED: " + secondsLeft + "s";
-                    }
-                    break;
+                updateModeTMP.text = $"DATA UPDATE: TIMED {delay}s (update in: {Mathf.CeilToInt(refreshTimer)}s)";
+                refreshTimer -= Time.deltaTime;
             }
 
             yield return null;
@@ -84,61 +85,85 @@ public class PanelDataUpdater : MonoBehaviour
 
     private void UpdateIfChanged()
     {
-        if (machineID == -1 || MachineDataManager.Instance == null)
-            return;
-
         NodeReader reader = MachineDataManager.Instance.GetReaderForMachine(machineID);
-        if (reader == null)
-            return;
+        if (reader == null) return;
 
         string currentData = reader.dataFromOPCUANode;
         if (currentData != lastNodeData)
         {
             lastNodeData = currentData;
-            UpdateText();
+            UpdatePanel();
         }
     }
 
-    private void UpdateText()
+    private void UpdatePanel()
     {
-        if (titleText == null || detailsText == null || machineID == -1 || MachineDataManager.Instance == null)
-            return;
-
-        string machineName = MachineDataManager.Instance.GetMachineName(machineID);
-        titleText.text = machineName;
-
         NodeReader reader = MachineDataManager.Instance.GetReaderForMachine(machineID);
         if (reader == null)
         {
-            detailsText.text = "Machine data not available.";
+            machineInfoTMP.text = "Machine data unavailable.";
+            orderInfoTMP.text = "NO ORDER";
             return;
         }
 
+        string nodeData = string.IsNullOrEmpty(reader.dataFromOPCUANode) ? "(no data)" : reader.dataFromOPCUANode;
         string nodeID = reader.nodeID;
-        string nodeData = string.IsNullOrEmpty(reader.dataFromOPCUANode) ? "(no data)" : reader.dataFromOPCUANode.Trim();
+        bool changed = (nodeData != lastNodeData);
+
+        if (changed)
+        {
+            lastTimestamp = System.DateTime.Now.ToString("dd/MM/yy HH:mm:ss");
+        }
+
         lastNodeData = nodeData;
+
+        machineInfoTMP.text =
+            $"Data Change Detected : {(changed ? "Yes" : "No")}\n" +
+            $"Last Change          : {lastTimestamp}\n" +
+            $"Node ID              : <i>{nodeID}</i>\n" +
+            $"Node Data            : {nodeData}";
 
         CurrentOrderJSON order = MachineDataManager.Instance.GetOrderForRFID(nodeData);
 
-        string orderDetails = order != null
-            ? $"Order Number      : {order.ONo}\n" +
-              $"Company           : {order.Company}\n" +
-              $"Planned Start     : {order.PlannedStart}\n" +
-              $"Planned End       : {order.PlannedEnd}\n" +
-              $"State             : {order.State}\n" +
-              $"Part Number       : {order.PartNumber}\n" +
-              $"Carrier ID        : {order.CarrierID}"
-            : "Order Number      : NO ORDER ASSIGNED\n" +
-              "Company           : n/a\n" +
-              "Planned Start     : n/a\n" +
-              "Planned End       : n/a\n" +
-              "State             : n/a\n" +
-              "Part Number       : n/a\n" +
-              "Carrier ID        : n/a";
+        if (order != null)
+        {
+            orderInfoTMP.text =
+                $"Order Number     : {order.ONo}\n" +
+                $"Company          : {order.Company}\n" +
+                $"Planned Start    : {order.PlannedStart}\n" +
+                $"Planned End      : {order.PlannedEnd}\n" +
+                $"State            : {order.State}\n" +
+                $"Part Number      : {order.PartNumber}\n" +
+                $"Carrier ID       : {order.CarrierID}";
+        }
+        else
+        {
+            orderInfoTMP.text =
+                "Order Number     : NO ORDER\n" +
+                "Company          : n/a\n" +
+                "Planned Start    : n/a\n" +
+                "Planned End      : n/a\n" +
+                "State            : n/a\n" +
+                "Part Number      : n/a\n" +
+                "Carrier ID       : n/a";
+        }
+    }
 
-        detailsText.text = $"Machine ID        : {machineID}\n" +
-                           $"Node ID           : {nodeID}\n" +
-                           $"Node Data         : {nodeData}\n\n" +
-                           orderDetails;
+    private void OnPartSliderChanged(float value)
+    {
+        partNumberValueTMP.text = $"Part No. {Mathf.RoundToInt(value)}";
+    }
+
+    private void OnQtySliderChanged(float value)
+    {
+        quantityValueTMP.text = $"Quantity: {Mathf.RoundToInt(value)}";
+    }
+
+    // Hook this manually to the button via Inspector
+    public void SendOrder()
+    {
+        // Placeholder message
+        string errorMsg = "<color=red><i>Order system not connected</i></color>";
+        orderStatusTMP.text = $"NEW ORDER STATUS: {errorMsg}";
     }
 }
