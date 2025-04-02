@@ -26,7 +26,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.6636481, y: 0.048474845, z: -0.44239086}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4633898629234734}
   m_Father: {fileID: 4645614871455892}
@@ -58,7 +57,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.6636481, y: 0.048474845, z: -0.44239086}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4900718823707242}
   m_Father: {fileID: 4645614871455892}
@@ -92,7 +90,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.64703, y: 0.14633515, z: 0.44239092}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4933036136570582}
   m_RootOrder: 0
@@ -116,12 +113,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -151,7 +146,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1402769441645924
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +174,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.3237138, y: 0.23615015, z: 0.3034378}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4141382953673158}
   m_RootOrder: 0
@@ -204,12 +197,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -235,7 +226,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1519069295887960
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4645614871455892}
+  - component: {fileID: 54692407322326076}
   - component: {fileID: 114150322184656590}
   - component: {fileID: 114157662486054476}
   m_Layer: 0
@@ -264,7 +255,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4182684715494344}
   - {fileID: 4363547006705258}
@@ -273,6 +263,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54692407322326076
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519069295887960}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &114150322184656590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,15 +294,10 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
+  Game4AutomationController: {fileID: 0}
   Direction: 0
   ReverseDirection: 1
   Offset: 0
-  StartPosition: 0
-  SpeedOverride: 1
-  SpeedScaleTransportSurface: 1
   MoveThisRigidBody: 0
   EditorMoveMode: 0
   TransportSurfaces:
@@ -305,7 +306,6 @@ MonoBehaviour:
   LowerLimit: 0
   UpperLimit: 1000
   JumpToLowerLimitOnUpperLimit: 0
-  LimitRayCast: {fileID: 0}
   UseAcceleration: 0
   SmoothAcceleration: 0
   Acceleration: 100
@@ -314,24 +314,16 @@ MonoBehaviour:
   TargetPosition: 0
   TargetSpeed: 100
   TargetStartMove: 0
-  BlockDestination: 1
   ResetDrive: 0
   _StopDrive: 0
   CurrentSpeed: 0
   CurrentPosition: 0
-  IsStopped: 0
   IsRunning: 0
-  IsAtTargetSpeed: 0
   IsAtTarget: 0
   IsAtLowerLimit: 0
   IsAtUpperLimit: 0
-  HideGizmos: 0
-  StandardSpeed: 0
-  StandardAcceleration: 0
   UseInteract: 0
   IsRotation: 0
-  PositionOverride: 0
-  PositionOverrideValue: 0
 --- !u!114 &114157662486054476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,16 +339,12 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
+  Game4AutomationController: {fileID: 0}
   ScaleSpeed: 1
   Speed: {fileID: 0}
-  Accelaration: {fileID: 0}
   Forward: {fileID: 0}
   Backward: {fileID: 0}
   IsAtPosition: {fileID: 0}
-  IsAtSpeed: {fileID: 0}
   IsDriving: {fileID: 0}
 --- !u!1 &1637901157255768
 GameObject:
@@ -384,7 +372,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.6636481, y: 0.048474845, z: -0.44239086}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4284933818931284}
   m_Father: {fileID: 4645614871455892}
@@ -416,7 +403,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.6636481, y: 0.048474845, z: -0.44239086}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4569282732687148}
   m_Father: {fileID: 4645614871455892}
@@ -450,7 +436,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.64703, y: 0.34539977, z: 0.44239086}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4182684715494344}
   m_RootOrder: 0
@@ -474,12 +459,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -505,7 +488,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1965537850109362
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +502,7 @@ GameObject:
   - component: {fileID: 54273978776451276}
   - component: {fileID: 65573291191576362}
   - component: {fileID: 114986467652590074}
-  m_Layer: 16
+  m_Layer: 19
   m_Name: Conveyor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +519,6 @@ Transform:
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: -6.123234e-17, w: -0.000000045536407}
   m_LocalPosition: {x: 0.87978005, y: -0.048474856, z: 0.20621994}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4363547006705258}
   m_RootOrder: 0
@@ -561,12 +542,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -591,7 +570,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &54273978776451276
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -599,23 +577,12 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965537850109362}
-  serializedVersion: 4
+  serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -627,17 +594,9 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965537850109362}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Size: {x: 1.5875956, y: 0.05327034, z: 0.491}
   m_Center: {x: -0.76725, y: 0.3795034, z: -0.236171}
 --- !u!114 &114986467652590074
@@ -655,23 +614,11 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
-  UseAGXPhysics: 0
+  Game4AutomationController: {fileID: 0}
   TransportDirection: {x: 0, y: 0, z: 0}
   TextureScale: 3
-  ChangeConstraintsOnEnter: 0
-  ConstraintsEnter: 0
-  ChangeConstraintsOnExit: 0
-  ConstraintsExit: 0
   Radial: 0
-  UseThisDrive: {fileID: 0}
   speed: 0
-  Layer: rvTransport
+  Layer: g4a Transport
   UseMeshCollider: 0
-  DebugMode: 0
-  ParentDrive: {fileID: 0}
-  parentposbefore: {x: 0, y: 0, z: 0}
-  LoadedPart: []
-  startTransportDirection: {x: 0, y: 0, z: 0}
+  FollowParent: 0

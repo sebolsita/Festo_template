@@ -29,7 +29,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.0047085243, y: 0.0058214325, z: 0.01723364}
   m_LocalScale: {x: 1.0000029, y: 1.0000029, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4519559336126540}
   m_Father: {fileID: 4761088236378634}
@@ -42,21 +41,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030233578475796}
-  serializedVersion: 4
+  serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -77,15 +65,10 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
+  Game4AutomationController: {fileID: 0}
   Direction: 2
   ReverseDirection: 0
   Offset: -20
-  StartPosition: 0
-  SpeedOverride: 1
-  SpeedScaleTransportSurface: 1
   MoveThisRigidBody: 0
   EditorMoveMode: 0
   TransportSurfaces: []
@@ -93,7 +76,6 @@ MonoBehaviour:
   LowerLimit: 0
   UpperLimit: 1000
   JumpToLowerLimitOnUpperLimit: 0
-  LimitRayCast: {fileID: 0}
   UseAcceleration: 0
   SmoothAcceleration: 0
   Acceleration: 100
@@ -102,24 +84,16 @@ MonoBehaviour:
   TargetPosition: 0
   TargetSpeed: 100
   TargetStartMove: 0
-  BlockDestination: 1
   ResetDrive: 0
   _StopDrive: 0
   CurrentSpeed: 0
   CurrentPosition: 0
-  IsStopped: 0
   IsRunning: 0
-  IsAtTargetSpeed: 0
   IsAtTarget: 1
   IsAtLowerLimit: 0
   IsAtUpperLimit: 0
-  HideGizmos: 0
-  StandardSpeed: 0
-  StandardAcceleration: 0
   UseInteract: 0
   IsRotation: 0
-  PositionOverride: 0
-  PositionOverrideValue: 0
 --- !u!114 &114778294195374808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,10 +109,7 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
-  OneBitCylinder: 0
+  Game4AutomationController: {fileID: 0}
   MinPos: 35
   MaxPos: 45
   TimeOut: 0.5
@@ -189,7 +160,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.058006823, y: -0.9976424, z: -0.16597699}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4164929809911664}
   m_RootOrder: 0
@@ -213,12 +183,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -248,7 +216,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1061690632659970
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +242,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.015163243, y: 0.000000059604645, z: -0.0000005364418}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4696190322839338}
   m_Father: {fileID: 4641145544655154}
@@ -310,7 +276,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.073170066, y: 1.1856036, z: 0.341}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4952130589007432}
   - {fileID: 4164929809911664}
@@ -324,21 +289,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089686586276452}
-  serializedVersion: 4
+  serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -359,15 +313,10 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
+  Game4AutomationController: {fileID: 0}
   Direction: 2
   ReverseDirection: 1
   Offset: 0
-  StartPosition: 0
-  SpeedOverride: 1
-  SpeedScaleTransportSurface: 1
   MoveThisRigidBody: 0
   EditorMoveMode: 0
   TransportSurfaces: []
@@ -375,7 +324,6 @@ MonoBehaviour:
   LowerLimit: 0
   UpperLimit: 1000
   JumpToLowerLimitOnUpperLimit: 0
-  LimitRayCast: {fileID: 0}
   UseAcceleration: 1
   SmoothAcceleration: 0
   Acceleration: 500
@@ -384,24 +332,16 @@ MonoBehaviour:
   TargetPosition: 0
   TargetSpeed: 800
   TargetStartMove: 0
-  BlockDestination: 1
   ResetDrive: 0
   _StopDrive: 0
   CurrentSpeed: 0
   CurrentPosition: 0
-  IsStopped: 0
   IsRunning: 0
-  IsAtTargetSpeed: 0
   IsAtTarget: 0
   IsAtLowerLimit: 0
   IsAtUpperLimit: 0
-  HideGizmos: 0
-  StandardSpeed: 0
-  StandardAcceleration: 0
   UseInteract: 0
   IsRotation: 0
-  PositionOverride: 0
-  PositionOverrideValue: 0
 --- !u!114 &114278972179328600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,9 +357,7 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
+  Game4AutomationController: {fileID: 0}
   Speed: {fileID: 0}
   StartDrive: {fileID: 0}
   Destination: {fileID: 0}
@@ -457,7 +395,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.058006823, y: -1.1856036, z: -0.16597702}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4266433558033706}
   m_RootOrder: 0
@@ -481,12 +418,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -514,7 +449,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1147049846088204
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +477,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -5.577247e-17, z: -0, w: 1}
   m_LocalPosition: {x: 8.8817837e-17, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4507828574175094}
   m_RootOrder: 1
@@ -567,12 +500,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -597,7 +528,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1294383123638680
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +556,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.8817837e-17, y: -3.9968027e-17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4809101448318880}
   m_RootOrder: 0
@@ -650,12 +579,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -681,7 +608,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1360696136564616
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +634,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4507828574175094}
   - {fileID: 4809101448318880}
@@ -745,7 +670,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.8817837e-17, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4733141160552102}
   m_RootOrder: 0
@@ -769,12 +693,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -804,7 +726,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1572105132544060
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +739,7 @@ GameObject:
   - component: {fileID: 23454500429058876}
   - component: {fileID: 65555022835564242}
   - component: {fileID: 114537990509944992}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -835,7 +756,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.720479, y: -0.106549665, z: -0.17984544}
   m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4198280459357862}
   m_RootOrder: 0
@@ -859,12 +779,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -892,7 +810,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &65555022835564242
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -901,17 +818,9 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572105132544060}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Size: {x: 0.06396351, y: 0.07556333, z: 0.042733073}
   m_Center: {x: -0.10176779, y: 0.6627526, z: 0.17404082}
 --- !u!114 &114537990509944992
@@ -929,36 +838,22 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
-  DisplayStatus: 0
+  Game4AutomationController: {fileID: 0}
   LimitSensorToTag: 
-  UseRaycast: 0
-  RayCastDirection: {x: 1, y: 0, z: 0}
-  RayCastLength: 1000
-  RayCastDisplayWidth: 0.01
-  AdditionalRayCastLayers: []
-  ShowSensorLinerenderer: 1
+  DisplayStatus: 0
   MaterialOccupied: {fileID: 2100000, guid: 728208d974753d74ca660fce4da35408, type: 2}
   MaterialNotOccupied: {fileID: 2100000, guid: 6de9264cf18a08342a954b3eaeb1af16, type: 2}
   PauseOnSensor: 0
-  SensorOccupied: {fileID: 0}
   EventMUSensor:
-    m_PersistentCalls:
-      m_Calls: []
-  EventNonMUGameObjectSensor:
     m_PersistentCalls:
       m_Calls: []
   Occupied: 0
   LastTriggeredBy: {fileID: 0}
-  RayCastDistance: 0
   LastTriggeredID: 0
   LastTriggeredGlobalID: 0
   Counter: 0
   CollidingMus: []
   CollidingObjects: []
-  scale: 1000
 --- !u!1 &1653334950909222
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,7 +882,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.8817837e-17, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4507828574175094}
   m_RootOrder: 0
@@ -1011,12 +905,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -1043,7 +935,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1691086619599996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +961,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.015163243, y: 0.000000059604645, z: -0.0000005364418}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4311158712256934}
   - {fileID: 4477767227072866}
@@ -1107,7 +997,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.022, z: -0.000000029802322}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4240521055999898}
   - {fileID: 4761088236378634}
@@ -1121,21 +1010,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701503589625670}
-  serializedVersion: 4
+  serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -1156,15 +1034,10 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
+  Game4AutomationController: {fileID: 0}
   Direction: 1
   ReverseDirection: 1
   Offset: 0
-  StartPosition: 0
-  SpeedOverride: 1
-  SpeedScaleTransportSurface: 1
   MoveThisRigidBody: 0
   EditorMoveMode: 0
   TransportSurfaces: []
@@ -1172,7 +1045,6 @@ MonoBehaviour:
   LowerLimit: 0
   UpperLimit: 1000
   JumpToLowerLimitOnUpperLimit: 0
-  LimitRayCast: {fileID: 0}
   UseAcceleration: 1
   SmoothAcceleration: 0
   Acceleration: 500
@@ -1181,24 +1053,16 @@ MonoBehaviour:
   TargetPosition: 0
   TargetSpeed: 800
   TargetStartMove: 0
-  BlockDestination: 1
   ResetDrive: 0
   _StopDrive: 0
   CurrentSpeed: 0
   CurrentPosition: 0
-  IsStopped: 0
   IsRunning: 0
-  IsAtTargetSpeed: 0
   IsAtTarget: 0
   IsAtLowerLimit: 0
   IsAtUpperLimit: 0
-  HideGizmos: 0
-  StandardSpeed: 0
-  StandardAcceleration: 0
   UseInteract: 0
   IsRotation: 0
-  PositionOverride: 0
-  PositionOverrideValue: 0
 --- !u!114 &114766745749223808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,9 +1078,7 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
+  Game4AutomationController: {fileID: 0}
   Speed: {fileID: 0}
   StartDrive: {fileID: 0}
   Destination: {fileID: 0}
@@ -1254,7 +1116,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.8817837e-17, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4507828574175094}
   m_RootOrder: 2
@@ -1278,12 +1139,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -1308,7 +1167,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1721489808608566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,7 +1196,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0.000000011923474, w: 1}
   m_LocalPosition: {x: -0.004488525, y: -0.0058899475, z: -0.016425341}
   m_LocalScale: {x: 1.0000029, y: 1.0000029, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4590216740432898}
   m_Father: {fileID: 4761088236378634}
@@ -1351,21 +1208,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721489808608566}
-  serializedVersion: 4
+  serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -1386,15 +1232,10 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
+  Game4AutomationController: {fileID: 0}
   Direction: 2
   ReverseDirection: 1
   Offset: -20
-  StartPosition: 0
-  SpeedOverride: 1
-  SpeedScaleTransportSurface: 1
   MoveThisRigidBody: 0
   EditorMoveMode: 0
   TransportSurfaces: []
@@ -1402,7 +1243,6 @@ MonoBehaviour:
   LowerLimit: 0
   UpperLimit: 1000
   JumpToLowerLimitOnUpperLimit: 0
-  LimitRayCast: {fileID: 0}
   UseAcceleration: 0
   SmoothAcceleration: 0
   Acceleration: 100
@@ -1411,24 +1251,16 @@ MonoBehaviour:
   TargetPosition: 0
   TargetSpeed: 100
   TargetStartMove: 0
-  BlockDestination: 1
   ResetDrive: 0
   _StopDrive: 0
   CurrentSpeed: 0
   CurrentPosition: 0
-  IsStopped: 0
   IsRunning: 0
-  IsAtTargetSpeed: 0
   IsAtTarget: 0
   IsAtLowerLimit: 0
   IsAtUpperLimit: 0
-  HideGizmos: 0
-  StandardSpeed: 0
-  StandardAcceleration: 0
   UseInteract: 0
   IsRotation: 0
-  PositionOverride: 0
-  PositionOverrideValue: 0
 --- !u!114 &114469374232246428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,9 +1276,7 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
+  Game4AutomationController: {fileID: 0}
   MasterDrive: {fileID: 114228492540960192}
   GearFactor: 1
   Offset: 0
@@ -1478,7 +1308,6 @@ Transform:
   m_LocalRotation: {x: 0.008012596, y: 0.0033229429, z: 0.7064431, w: 0.7077168}
   m_LocalPosition: {x: -0.04272145, y: -0.27245492, z: -0.0033651888}
   m_LocalScale: {x: 1.000001, y: 1.000001, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4379743645155172}
   - {fileID: 4198280459357862}
@@ -1494,21 +1323,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760272455061016}
-  serializedVersion: 4
+  serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -1529,17 +1347,14 @@ MonoBehaviour:
   Name: 
   Active: 0
   FromTemplate: {fileID: 0}
-  realvirtualController: {fileID: 0}
-  HideNonG44Components: 0
-  SceneIsAdditive: 0
+  Game4AutomationController: {fileID: 0}
   PartToGrip: {fileID: 114537990509944992}
-  DirectlyGrip: 0
   PickAlignWithObject: {fileID: 1995509138282156}
   PlaceAlignWithObject: {fileID: 0}
-  ConnectToJoint: {fileID: 0}
   PickBasedOnSensor: {fileID: 0}
   PickBasedOnCylinder: {fileID: 114778294195374808}
   PickOnCylinderMax: 0
+  GripAsSubcomponent: 1
   NoPhysicsWhenPlaced: 0
   PlaceLoadOnMU: 1
   PlaceLoadOnMUSensor: {fileID: 0}
@@ -1577,7 +1392,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.015163243, y: 0.000000059604645, z: -0.0000005364418}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4563193880082170}
   m_Father: {fileID: 4641145544655154}
@@ -1611,7 +1425,6 @@ Transform:
   m_LocalRotation: {x: -0, y: -8.659561e-17, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.720699, y: -0.0948383, z: -0.14618644}
   m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4699766803085264}
   m_RootOrder: 0
@@ -1635,12 +1448,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -1668,7 +1479,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1982178403616494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,7 +1507,6 @@ Transform:
   m_LocalRotation: {x: 0.49785337, y: 0.50213754, z: 0.5021375, w: 0.49785328}
   m_LocalPosition: {x: -0.725188, y: -0.10072836, z: -0.1626118}
   m_LocalScale: {x: 1.000005, y: 1.0000021, z: 1.0000029}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4761088236378634}
   m_RootOrder: 0
@@ -1721,12 +1530,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -1751,7 +1558,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1995509138282156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,7 +1584,6 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0.7071068, z: -0.000000030908623, w: 0.000000030908623}
   m_LocalPosition: {x: -0.0085, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4761088236378634}
   m_RootOrder: 3
