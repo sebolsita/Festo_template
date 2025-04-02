@@ -9683,7 +9683,15 @@ MonoBehaviour:
   resetHmdPoseOnRelease: 1
   resetHmdPoseByMiddleMouseButton: 1
   activateKeys: 3201000031010000
+  activateKeyBindings:
+  - <Keyboard>/leftCtrl
+  - <Keyboard>/rightCtrl
+  - <Keyboard>/f1
   pitchKeys: 3401000033010000
+  pitchKeyBindings:
+  - <Keyboard>/leftAlt
+  - <Keyboard>/rightAlt
+  - <Keyboard>/f2
 --- !u!114 &510092866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18259,7 +18267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2648d9dfa6574304b85f91ca4bac32ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelGroupPrefab: {fileID: 7459033843634555422, guid: 17d641220ea07d6429726d44c2424b3d,
+  panelGroupPrefab: {fileID: 7459033843634555422, guid: 7308386a92fe8ba47a165f4bcdd88b93,
     type: 3}
   localOffset: {x: -0.001, y: -0.0001, z: 0.6}
   rotationOffset: {x: 180, y: 0, z: 180}
