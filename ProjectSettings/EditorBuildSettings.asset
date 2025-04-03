@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/ImageTarget.unity
     guid: a4921cd62cc1c0442a0a764087da9ec2
   - enabled: 1
-    path: Assets/_FEATURES/MX_FUNCTIONALITY_MRUK.unity
+    path: Assets/_FEATURES/MX_MRUK.unity
     guid: 1144c360ef53d1d41ba564b97b1adbd9
+  - enabled: 1
+    path: Assets/_FEATURES/VR_MRUK.unity
+    guid: d6284b8ac8ab43945a5e9bad573927ac
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b13e06378aab29c478758892aa04ead9,
       type: 2}

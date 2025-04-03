@@ -3,22 +3,29 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    [SerializeField] private GameObject passthroughObject; // assign your PassthroughBuildingBlock
-    [SerializeField] private string arSceneName = "ARScene";
-    [SerializeField] private string vrSceneName = "DigitalTwinScene";
+    [Header("Scene Names")]
+    [SerializeField] private string arSceneName = "MX_MRUK";
+    [SerializeField] private string vrSceneName = "VR_MRUK";
 
+    [Header("Passthrough Root Object (optional)")]
+    [SerializeField] private GameObject passthroughObject;
+
+    /// <summary>
+    /// Called from a UI Button. Switches between AR and Digital Twin scenes
+    /// based on whether passthrough is active.
+    /// </summary>
     public void SwitchScene()
     {
         string targetScene;
 
         if (passthroughObject != null && passthroughObject.activeInHierarchy)
         {
-            // You're in AR go to VR
+            // Currently in AR scene switch to VR
             targetScene = vrSceneName;
         }
         else
         {
-            // You're in VR go to AR
+            // Currently in VR scene witch to AR
             targetScene = arSceneName;
         }
 
