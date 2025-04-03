@@ -3595,6 +3595,7 @@ GameObject:
   - component: {fileID: 3924463079789761112}
   - component: {fileID: 6963256309767596352}
   - component: {fileID: 918125906841507542}
+  - component: {fileID: 8234144470474468986}
   m_Layer: 4
   m_Name: Panel
   m_TagString: Untagged
@@ -3937,6 +3938,23 @@ MonoBehaviour:
   refreshSlider: {fileID: 6517620104287293462}
   partNumberSlider: {fileID: 189038422485143701}
   quantitySlider: {fileID: 10072599027006342}
+--- !u!114 &8234144470474468986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784130216272668432}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9653bd81d1b9e894ab0541b3da4ea1e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleTMP: {fileID: 4718106228709243684}
+  updateModeTMP: {fileID: 5106791174624435279}
+  machineInfoTMP: {fileID: 449639284258025870}
+  orderInfoTMP: {fileID: 3989166652202318464}
+  refreshSlider: {fileID: 6517620104287293462}
 --- !u!1 &881289071188603921
 GameObject:
   m_ObjectHideFlags: 0
@@ -8827,7 +8845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 184, y: -314.865}
+  m_AnchoredPosition: {x: 184, y: -226.675}
   m_SizeDelta: {x: 320, y: 12.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9015745627500315353
@@ -10865,7 +10883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 184, y: -431.155}
+  m_AnchoredPosition: {x: 184, y: -342.965}
   m_SizeDelta: {x: 320, y: 12.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7338966590222371441
@@ -11845,8 +11863,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 184, y: -252.625}
-  m_SizeDelta: {x: 320, y: 88.19}
+  m_AnchoredPosition: {x: 184, y: -208.53}
+  m_SizeDelta: {x: 320, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2014024062545635229
 CanvasRenderer:
@@ -11876,21 +11894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Order Number     : 501
-
-    Company          : Festo AG
-
-    Planned Start   
-    : 10:30
-
-    Planned End      : 11:45
-
-    State            : In Progress
-
-    Part
-    Number      : 210
-
-    Carrier ID       : 6'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17377,6 +17381,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -44
       objectReference: {fileID: 0}
+    - target: {fileID: 693443940697612366, guid: ff0b515dff6b19a408abff5f459d1911,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1064458658613922774, guid: ff0b515dff6b19a408abff5f459d1911,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -18652,7 +18661,7 @@ PrefabInstance:
     - target: {fileID: 7560248273469331854, guid: 85438a2c7e275254da784cc730c49546,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -373.01
+      value: -284.82
       objectReference: {fileID: 0}
     - target: {fileID: 7560248273469331854, guid: 85438a2c7e275254da784cc730c49546,
         type: 3}
